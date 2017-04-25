@@ -1,8 +1,13 @@
 {
     "name": "__MSG_appName__",
-    "version": "2.0.17",
+    "version": "1.0.0",
     "manifest_version": 2,
     "description": "__MSG_appDescription__",
+    "applications": {
+        "gecko": {
+            "id": "shortkeys@zero-factorial.com"
+        }
+    },
     "icons": {
         "16": "images/icon_16.png",
         "48": "images/icon_48.png",
@@ -15,7 +20,9 @@
             "scripts/background.js"
         ]
     },
-    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html"
+    },
     "content_scripts": [
         {
             "matches": [

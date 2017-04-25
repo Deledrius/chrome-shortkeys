@@ -155,7 +155,7 @@ var doAction = function(keySetting) {
         document.querySelector(keySetting.button).click();
       }
       message.action = 'nexttab';
-      chrome.runtime.sendMessage(message);
+      browser.runtime.sendMessage(message);
       break;
     case 'disable':
       break;
@@ -163,7 +163,7 @@ var doAction = function(keySetting) {
       for (var attribute in keySetting) {
         message[attribute] = keySetting[attribute];
       }
-      chrome.runtime.sendMessage(message);
+      browser.runtime.sendMessage(message);
   }
 };
 
@@ -221,7 +221,7 @@ Mousetrap.stopCallback = function(e, element, combo) {
 /**
  * Fetches the Shortkeys configuration object and wires up each configured shortcut.
  */
-chrome.runtime.sendMessage({action: 'getKeys'}, function(response) {
+browser.runtime.sendMessage({action: 'getKeys'}, function(response) {
   if (response) {
     keySettings = JSON.parse(response);
     var keys = keySettings.keys;
